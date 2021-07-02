@@ -1,16 +1,18 @@
 # VBA Challenge
 
 ## Overview
-The purpose of this challenge was to demonstrate the usefulness of refactoring code. To demonstrate this we made a vba macro that analyzes data for a few stocks and our client liked it so much they want to use it for analyzing the entire stock market over a few years.  Our original code completes the intended objective but it is very ineffectient and will run too slowly for our clients large dataset.
+The purpose of this challenge was to demonstrate the usefulness of refactoring code. To demonstrate this, we made a VBA macro that analyzes data for a few stocks and our client liked it so much they want to use it for analyzing the entire stock market over a few years.  Our original code completes the intended objective, but it is very inefficient and will run too slowly for our client’s large dataset.
 
 ## Results
 
 ### Background of the dataset 
 ![image](https://user-images.githubusercontent.com/54948382/124210633-c4c54680-dab9-11eb-9bdf-644902c39264.png)
+
 There are 12 total tickers and 3k+ lines in this Excel file.
 
 ### Original code
-In the original code we loop over the entire file but only collect the relevant information of one ticker at a time.  This gets the job done but will be too inefficent to be used on larger datasets with many tickers.
+In the original code we loop over the entire file but only collect the relevant information of one ticker at a time.  This gets the job done but will be too inefficient to be used on larger datasets with many tickers.
+
 
      For i = 0 To 11
        ticker = tickers(i)
@@ -34,7 +36,8 @@ In the original code we loop over the entire file but only collect the relevant 
     Next i
 
 ### Refactored code
-After reviewing the code we decided to change the structure of our main for loop.  Instead of only collecting the relevant information on one ticker for each pass through the file we collect all the info we need in only one pass.  This means that our new code only has to loop through the file once while the original would have to repeat the same loop for each ticker.
+After reviewing the code, we decided to change the structure of our main for loop.  Instead of only collecting the relevant information on one ticker for each pass through the file we collect all the info we need in only one pass.  This means that our new code only has to loop through the file once while the original would have to repeat the same loop for each ticker.
+
 
     For i = 2 To RowCount
         ticker = tickers(tickerIndex)
@@ -58,14 +61,15 @@ After reviewing the code we decided to change the structure of our main for loop
     Next i
 
 ### Stock Analysis
-Our client was very impressed by the macro which boiled down a large data set into an understandable format.  Using the macro we could easily compare the performance of these tickers over 2017 and 2018.
+Our client was very impressed by the macro which boiled down a large data set into an understandable format.  Using the macro, we could easily compare the performance of these tickers over 2017 and 2018.
 
 ![2017](VBA_Challenge_2017.PNG) ![2018](VBA_Challenge_2018.PNG)
 
-The output of the macro allowed our client to easily see the great gains that were made in 2017 and the large losses which occured in 2018.
+The output of the macro allowed our client to easily see the great gains that were made in 2017 and the large losses which occurred in 2018.
 
 ## Summary
 
-Refactoring code is a critical component of programming.  It can allow you to increase the performance of your code, improve readability, and simplify your code by consolidating repetitive sections into one. That being said there are some disadvantages to refactoring.  For example there is often diminishing returns of benefit to refactoring.    Additionally refactoring code carries risk of introducing new bugs. And cheifly refactoring code takes time. Oftentimes you just need to get the project done even if it isnt the best performing or most elegant solution. 
+Refactoring code is a critical component of programming.  It can allow you to increase the performance of your code, improve readability, and simplify your code by consolidating repetitive sections into one. That being said there are some disadvantages to refactoring.  For example, there is often diminishing returns of benefit to refactoring.    Additionally, refactoring code carries risk of introducing new bugs. And chiefly refactoring code takes time. Oftentimes you just need to get the project done even if it isn’t the best performing or most elegant solution. 
 
-Our original code completed the objective our client asked for but the problems in its inefficent design would compound over larger datasets.  The refactored code was much faster and was also arguably easier to understand.  This is a great example of the importance of refactoring code without going overboard.  If we were to refactor this code again we would not be able to get the enormous boost in performance we saw the first time.
+Our original code completed the objective our client asked for but the problems in its inefficient design would compound over larger datasets.  The refactored code was much faster and was also arguably easier to understand.  This is a great example of the importance of refactoring code without going overboard.  If we were to refactor this code again, we would not be able to get the enormous boost in performance we saw the first time.
+
