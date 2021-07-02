@@ -8,7 +8,7 @@
 ## Results
 =original code
 
-  For i = 0 To 11
+     For i = 0 To 11
        ticker = tickers(i)
        totalVolume = 0
        Worksheets(yearValue).Activate
@@ -16,11 +16,9 @@
            If Cells(j, 1).Value = ticker Then
                totalVolume = totalVolume + Cells(j, 8).Value
            End If
-
            If Cells(j - 1, 1).Value <> ticker And Cells(j, 1).Value = ticker Then
                startingPrice = Cells(j, 6).Value
            End If
-
            If Cells(j + 1, 1).Value <> ticker And Cells(j, 1).Value = ticker Then
                endingPrice = Cells(j, 6).Value
            End If
@@ -28,9 +26,8 @@
        Worksheets("All Stocks Analysis").Activate
        Cells(4 + i, 1).Value = ticker
        Cells(4 + i, 2).Value = totalVolume
-       Cells(4 + i, 3).Value = endingPrice / startingPrice - 1
-   Next i
-
+       Cells(4 + i, 3).Value = endingPrice
+    Next i
 
 =refactored code
 
