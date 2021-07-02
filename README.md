@@ -60,31 +60,12 @@ After reviewing the code we decided to change the structure of our main for loop
 ### Stock Analysis
 Our client was very impressed by the macro which boiled down a large data set into an understandable format.  Using the macro we could easily compare the performance of these tickers over 2017 and 2018.
 
-![2017](VBA_Challenge_2017.png)
+![2017](VBA_Challenge_2017.PNG) ![2018](VBA_Challenge_2018.PNG)
 
-![2018](VBA_Challenge_2018.png)
-
-
-
+The output of the macro allowed our client to easily see the great gains that were made in 2017 and the large losses which occured in 2018.
 
 ## Summary
-refactoring
-pros
--increase performance
--improve readability
--Can consolidate repetitive sections into one 
-cons
--Diminishing returns
--Chance of breaking working code
 
+Refactoring code is a critical component of programming.  It can allow you to increase the performance of your code, improve readability, and simplify your code by consolidating repetitive sections into one. That being said there are some disadvantages to refactoring.  For example there is often diminishing returns of benefit to refactoring.    Additionally refactoring code carries risk of introducing new bugs. And cheifly refactoring code takes time. Oftentimes you just need to get the project done even if it isnt the best performing or most elegant solution. 
 
-original code
-pros
--Completes the objective
-cons
--slow / this will compound as more stocks are analyzed 
-
-refactored code
-pros
--faster
--more readable
+Our original code completed the objective our client asked for but the problems in its inefficent design would compound over larger datasets.  The refactored code was much faster and was also arguably easier to understand.  This is a great example of the importance of refactoring code without going overboard.  If we were to refactor this code again we would not be able to get the enormous boost in performance we saw the first time.
