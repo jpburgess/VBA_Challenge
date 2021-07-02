@@ -1,12 +1,16 @@
-# VBA_Challenge
+# VBA Challenge
 
 ## Overview
--demonstrate the usefulness of refactoring code
--we made a vba macro that analyzes data for a few stocks and our client liked it so much they want to use it for analyzing the entire stock market over a few years
-
+The purpose of this challenge was to demonstrate the usefulness of refactoring code. To demonstrate this we made a vba macro that analyzes data for a few stocks and our client liked it so much they want to use it for analyzing the entire stock market over a few years.  Our original code completes the intended objective but it is very ineffectient and will run too slowly for our clients large dataset.
 
 ## Results
-=original code
+
+### Background of the dataset 
+![image](https://user-images.githubusercontent.com/54948382/124210633-c4c54680-dab9-11eb-9bdf-644902c39264.png)
+There are 12 total tickers and 3k+ lines in this Excel file.
+
+### Original code
+In the original code we loop over the entire file but only collect the relevant information of one ticker at a time.  This gets the job done but will be too inefficent to be used on larger datasets with many tickers.
 
      For i = 0 To 11
        ticker = tickers(i)
@@ -29,7 +33,8 @@
        Cells(4 + i, 3).Value = endingPrice
     Next i
 
-=refactored code
+### Refactored code
+After reviewing the code we decided to change the structure of our main for loop.  Instead of only collecting the relevant information on one ticker for each pass through the file we collect all the info we need in only one pass.  This means that our new code only has to loop through the file once while the original would have to repeat the same loop for each ticker.
 
     For i = 2 To RowCount
         ticker = tickers(tickerIndex)
@@ -52,7 +57,14 @@
         Cells(i + 4, 3).Value = tickerEndingPrices(i) / tickerStartingPrices(i) - 1
     Next i
 
-=stock data
+### Stock Analysis
+Our client was very impressed by the macro which boiled down a large data set into an understandable format.  Using the macro we could easily compare the performance of these tickers over 2017 and 2018.
+
+![image](VBA_Challenge_2017.png)
+
+![image](VBA_Challenge_2018.png)
+
+
 
 
 ## Summary
