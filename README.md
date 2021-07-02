@@ -60,9 +60,9 @@ After reviewing the code we decided to change the structure of our main for loop
 ### Stock Analysis
 Our client was very impressed by the macro which boiled down a large data set into an understandable format.  Using the macro we could easily compare the performance of these tickers over 2017 and 2018.
 
-![image](VBA_Challenge_2017.png)
+![2017](VBA_Challenge_2017.png)
 
-![image](VBA_Challenge_2018.png)
+![2018](VBA_Challenge_2018.png)
 
 
 
